@@ -40,7 +40,7 @@ class OptionsData:
 
 class DataCache:
     """Simple caching mechanism for market data"""
-    
+    yf.pdr_override()
     def __init__(self, cache_dir: str = "cache", max_age_minutes: int = 5):
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(exist_ok=True)
